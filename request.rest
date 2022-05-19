@@ -3,19 +3,27 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "name": "gya",
-    "username": "gya",
+    "name": "test4",
+    "username": "test4",
     "password": "password1"
 }
 
 ### 
-
 POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "username" : "argya",
-    "password" : "password"
+    "username" : "test3",
+    "password" : "password1"
 }
 
 ###
+GET http://localhost:3000/user
+
+###
+GET http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.IjYyODVmNzA1ZjUxZmUxZjM3ZWZhNWU1NSI.jquJuYiEopbKqn1vdaqOq-N4WcaUsSvi__6hhL7Hsts
+
+###
+PATCH http://localhost:3000/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.IjYyODVmNzA1ZjUxZmUxZjM3ZWZhNWU1NSI.jquJuYiEopbKqn1vdaqOq-N4WcaUsSvi__6hhL7Hsts

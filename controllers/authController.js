@@ -68,9 +68,8 @@ exports.register = async (req, res) => {
 		console.log("create data di mongodb");
 		const user = await new User({
 			name,
-			username,
-			password,
-			// password: await hashPass(password),
+			username,			
+			password: await hashPass(password),
 		}).save();
 		console.log("berhasil create");
 		user.token = jwt.sign(JSON.stringify(user._id), process.env.JWT_SECRET_KEY);
@@ -82,3 +81,12 @@ exports.register = async (req, res) => {
 		res.status(500).json({ error });
 	}
 };
+
+exports.user = async (req, res) => {
+	try {
+		const user = await User.find();
+		res.json(user)
+	} catch (error) {
+		console.lot(error)
+	}
+}
