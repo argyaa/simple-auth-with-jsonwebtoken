@@ -68,7 +68,7 @@ exports.register = async (req, res) => {
 		console.log("create data di mongodb");
 		const user = await new User({
 			name,
-			username,			
+			username,
 			password: await hashPass(password),
 		}).save();
 		console.log("berhasil create");
@@ -85,8 +85,10 @@ exports.register = async (req, res) => {
 exports.user = async (req, res) => {
 	try {
 		const user = await User.find();
-		res.json(user)
+		res.json(user);
 	} catch (error) {
-		console.lot(error)
+		console.lot(error);
 	}
-}
+};
+
+//
